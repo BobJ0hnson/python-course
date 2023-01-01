@@ -1,6 +1,6 @@
 str1 = input('Enter text: ')
 for s in str1:
-    if s.isnumeric() == True:
+    if s.isnumeric():
         if int(s) % 2 == 0:
             print('even')
         else:
@@ -16,6 +16,6 @@ for s in str1:
 ### infinite while loop ###
 
 from time import sleep
-while true:
-print('I love python')
-sleep(4.2)
+while True:
+    print('I love python')
+    sleep(4.2)
