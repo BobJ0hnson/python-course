@@ -1,9 +1,9 @@
 ### decorated function ###
-import time
+from datetime import datetime
 def decorator(my_func):
     def deco_func():
         print(my_func.__name__)
-        print(time.clock())
+        print(datetime.now())
         my_func()
 
     return deco_func()
