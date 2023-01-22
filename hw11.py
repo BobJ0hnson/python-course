@@ -1,12 +1,11 @@
 ### decorated function ###
 from datetime import datetime
 def decorator(my_func):
-    def deco_func():
+    def deco_func(*args, **kwargs):
         print(my_func.__name__)
         print(datetime.now())
-        my_func()
-
-    return deco_func()
+        return my_func()
+    return deco_func(*args, **kwargs)
 
 @decorator
 def print_func():
@@ -31,6 +30,7 @@ class ContextManager():
             print(f'Error due to exception {exc_value}')
         print(f'This was a value {self.value}')
         print('==========')
+        return True
 
 with ContextManager(1) as some_value:
     print(f'Some Value is {some_value}')
