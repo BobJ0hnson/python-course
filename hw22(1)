@@ -1,0 +1,31 @@
+create TABLE IF NOT EXISTS users (
+    id integer primary key AUTOINCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    age integer NOT NULL 
+)  
+
+create TABLE IF NOT EXISTS publishing_house (
+    id integer primary key AUTOINCREMENT,
+    name TEXT,
+    rating integer DEFAULT 5 
+)
+
+create TABLE IF NOT EXISTS books (
+    id integer primary key AUTOINCREMENT,
+    title TEXT,
+    author TEXT,
+    year integer,
+    price integer,
+    publishing_house_id integer,
+    FOREIGN KEY (publishing_house_id) REFERENCES publishing_house(id)
+)  
+
+create TABLE IF NOT EXISTS purchases (
+    id integer primary key AUTOINCREMENT,
+    user_id integer NOT NULL,
+    book_id integer NOT NULL,
+    date  
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (book_id) REFERENCES books(id)
+)
