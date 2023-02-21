@@ -1,0 +1,22 @@
+connection = sqlite3.connect('20/database.sqlite')
+cursor = connection.cursor()
+
+
+query = 'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, age INTEGER)'
+
+cursor.execute(query)
+connection.commit()
+
+query = 'INSERT INTO users (first_name, last_name, age) VALUES (?, ?, ?)'
+
+data = [
+    ('Bob', 'Johnson', '31'),
+    ('Bob', 'Johnson', '32'),
+    ('Bob', 'Johnson', '33'),
+    ('Bob', 'Johnson', '34'),
+    ('Bob', 'Johnson', '35'),
+]
+
+cursor.executemany(query, data)
+
+connection.commit()
