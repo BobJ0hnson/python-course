@@ -1,0 +1,5 @@
+### Написати sql запит, який виведе інформацію про вік (кількість років) та кількість користувачів, які відповідають цьому віку
+SELECT age, count(id) as users
+FROM users
+GROUP BY age 
+ORDER BY age 
