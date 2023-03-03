@@ -4,11 +4,11 @@ class Bot:
     def say_name(self):
         print(self.name)
     def send_message(self, message):
-        print(self.message)
+        print(message)
 
 class TelegramBot(Bot):
-    def __init__(self, url, chat_id='None'):
-        super().__init__()
+    def __init__(self, url, chat_id=None):
+        super().__init__(name)
     def set_url(self, url):
         self.url = url
     def set_chat_id(self, chat_id):
