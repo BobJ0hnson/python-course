@@ -1,5 +1,5 @@
-from re import search
-phone_regex = '(?:\+\d{1,2})?\d{10}'
+import re
+phone_regex = '(?:\+?3?8?)?(?:\d{9}|\d{2}\d{7}|\d{3}\d{6})'
 phonebook = {}
 while True:
     user_input = input('Enter command: ')   # format command name phone
@@ -12,7 +12,7 @@ while True:
 
     if command == 'add':
         if phonebook.get(name) is None:
-            if match = re.search(phone_regex, phone) is not Null:
+            if re.search(phone_regex, phone) is not None:
                 phonebook[name] = phone
             else:
                 print('Invalid phone number format, it must be like: +380XXXXXXXXX, 380XXXXXXXXX, 0XXXXXXXXX')
