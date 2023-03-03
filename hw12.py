@@ -2,8 +2,8 @@ from datetime import datetime
 import json
 import sys
 
-with open('/phonebook', 'w+') as file:
-    phonebook = json.loads(file.read())
+
+phonebook = json.loads(file.read())
 
     while True:
         user_input = input('Enter command: ')   # format command name phone
@@ -17,13 +17,18 @@ with open('/phonebook', 'w+') as file:
         if command == 'add':
             if phonebook.get(name) is None:
                 phonebook[name] = phone
-                file.write(json.dumps(phonebook))
-            else:
-                print(f'{name} already recorded')
+                with open('phonebook', 'w+') as file:
+                    file.write(json.dumps(phonebook))
+                        else:
+                            print(f'{name} already recorded')
 
         elif command == 'delete':
-            del phonebook[name]
-            file.write(json.dumps(phonebook))
+            if phonebook.get(name) is not None:
+                del phonebook[name]
+                with open('phonebook', 'w+') as file:
+                    file.write(json.dumps(phonebook))
+            else: 
+                print(f'{name} not found')
 
         elif command == 'show':
             for name in phonebook:
@@ -39,18 +44,18 @@ with open('/phonebook', 'w+') as file:
 from datetime import datetime
 def decorator(my_func):
     def deco_func(*args,**kwargs):
-        with open('/phonebook', 'w+') as file:
+        with open('phonebook_log', 'a') as file:
             print(my_func.__name__, file=file)
             print(datetime.now(), file=file)
-            my_func()
+            my_func(*args, **kwargs)
         return
-    return deco_func()
+    return deco_func
 
 
 ### Custom Exception ###
 
 class MyCustomException(Exception):
-    with open('/phonebook', 'w+') as file:
+    with open('phonebook_log', 'a') as file:
         print(datetime.now(), file=file)
         print('error occured', file=file)
     pass
