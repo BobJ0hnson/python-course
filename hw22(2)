@@ -1,4 +1,4 @@
-SELECT purchases.id, purchases.date, user.first_name, user.last_name
+SELECT purchases.id, purchases.date, users.first_name, users.last_name
 FROM purchases
 LEFT JOIN users 
 ON purchases.user_id = users.id
