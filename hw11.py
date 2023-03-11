@@ -5,7 +5,7 @@ def decorator(my_func):
         print(my_func.__name__)
         print(datetime.now())
         return my_func(*args, **kwargs)
-    return deco_func()
+    return deco_func
 
 @decorator
 def print_func():
