@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+  <title>Yaroslav Rovnyi's Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Yaroslav Rovnyi</h1>
+    <hr>
+    <p>Employment History:</p>
+    <ul>
+      <li>upSwot, Business Analyst, 2022</li>
+      <li>Sanofi Ukraine, Financial Controller, 2020-2021</li>
+      <li>Auchan Ukraine, Investment and Procurement Controller, 2016-2019</li>
+    </ul>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Homework</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Homework 3</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Homework 4</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Homework 5</td>
+          <td>5</td>
+        </tr>
+        <tr>
+           <td>Homework 7</td>
+           <td>5</td>
+          </tr>
+          <tr>
+           <td>Homework 9</td>
+           <td>5</td>
+          </tr>
+          <tr>
+            <td>Homework 20</td>
+            <td> 5</td>
+          </tr>
+      </tbody>
+    </table>
+    <hr>
+    <h2>CV</h2>
+    <p>Workplace: fintech start up, Business Analyst</p>
+    <p>Time period: 2022 - now</p>
+    <p>Technologies: SQL, Clickhouse, Excel, API, Postman, Miro, Jira, Figma</p>
+    <p>Skills and frameworks: Software Requiremnts Documentation, User stories, Use Cases, MVP prototyping, User Journey Map, UML, BPMN </p>
+    <p>Accomplishments: integrated accountancy applications into core product, developed requirements documentations for app's functionality </p>
+  </div>
+</body>
+</html>
+
+<script>
+    // Generate random friends count on page load
+    let friendsCount = Math.floor(Math.random() * 100);
+
+    // Display friends count on page load
+    let friendsCountDisplay = document.createElement("p");
+    friendsCountDisplay.textContent = `Friends: ${friendsCount}`;
+    document.body.appendChild(friendsCountDisplay);
+
+    // Create "Add to friends" button
+
+    let addToFriendsButton = document.createElement("button");
+    addToFriendsButton.textContent = "Add to friends";
+    document.body.appendChild(addToFriendsButton);
+
+    // Add click event to "Add to friends" button
+
+      addToFriendsButton.addEventListener("click", function() {
+      friendsCount++;
+      friendsCountDisplay.textContent = `Friends: ${friendsCount}`;
+      addToFriendsButton.disabled = true;
+      addToFriendsButton.textContent = "Pending approval";
+      });
+
+    // Create "Write a message" button
+    let writeMessageButton = document.createElement("button");
+    writeMessageButton.textContent = "Write a message";
+    document.body.appendChild(writeMessageButton);
+
+      // Create "Suggest job" button
+      let suggestJobButton = document.createElement("button");
+      suggestJobButton.textContent = "Suggest job";
+      document.body.appendChild(suggestJobButton);
+
+</script>
+
