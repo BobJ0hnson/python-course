@@ -1,0 +1,22 @@
+   header {
+    width: fit-content;
+    height: fit-content;
+    background: aquamarine;
+   }
+   .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: beige;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      border: 1px solid black;
+      text-align: center;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
