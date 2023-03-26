@@ -8,7 +8,7 @@ website = random.choice(list_websites)
 response = requests.get('http://' + website)
 
 print('Website: ' + website)
-print('Status code: ' + str(response.status_code))
+print(f'Status code: {response.status_code}')
 print('HTML length: ' + str(len(response.text)))
 
 # Request API for weather in a city
